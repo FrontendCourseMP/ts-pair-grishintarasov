@@ -3,7 +3,8 @@
     "module": "esnext",
     "outDir": "./dist",
     "lib": ["es2016", "DOM"],
-    "allowJs": false
+    "allowJs": false,
+    "moduleDetection": "force"
   },
   "exclude": [
     "node_modules"
