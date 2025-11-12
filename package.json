@@ -1,0 +1,23 @@
+{
+  "name": "practice-ts",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "tsc -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FrontendCourseMP/ts-pair-bargan-avilov.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/FrontendCourseMP/ts-pair-bargan-avilov/issues"
+  },
+  "homepage": "https://github.com/FrontendCourseMP/ts-pair-bargan-avilov#readme",
+  "dependencies": {
+    "typescript": "^5.9.3"
+  }
+}
