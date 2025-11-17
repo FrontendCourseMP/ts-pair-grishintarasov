@@ -1,6 +1,96 @@
+*{
+    background-color: #01000f;
+    color: white;
+    font-size: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    ;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+h1{
+    margin: 0;
+    font-size: 32px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #080721;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input{
+    height: 25px;
+    border-radius:3px;
+    background-color: azure;
+    color: black;
+    padding: 3px;
+}
+
+label{
+    gap:105px
+}
+
+p{
+    margin: 5px;
+}
+
 form {
+    z-index: 9999;
+    position: relative;
     display: flex;
     flex-direction: column;
     row-gap: 10px;
-    margin: 10px;
+    margin: 30px;
+    background-color: #22234e;
+    padding: 20px;
+    border-radius: 5px;
 }
+
+.container{
+    width: 900px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.logo {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 100px;       
+    height: auto;
+    pointer-events: none; 
+    opacity: 0.95;        
+    z-index: -1;        
+    opacity: 0.2;
+    filter: blur(1px);    
+}
+
+.arrival, .late, h1, p, output, .itog-time-output{
+    background-color: #22234e;
+}
+
+.input-late, .input-arr {
+    width: 300px;
+}
+
+.arrival, .late, .itog-time-output{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.name{
+    font-size: 18px;
+    align-items: center;
+}
+

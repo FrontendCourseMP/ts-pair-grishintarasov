@@ -8,20 +8,21 @@
     <link rel="stylesheet" href="./src/style.css"></link>
 </head>
 <body>
+  <div class="container">
   <form action="">
     <h1>TS: задача 1</h1>
-    <label for="arrival">
-      Час прибытия по расписанию
+    <div class="arrival">
+      <p class="name"> Час прибытия по расписанию</p>
       <input type="number" min="0" max="23" class="input-arr" name="arrival" id="arrival" placeholder="0" aria-placeholder="Час прибытия по расписанию" >
-    </label>
-    <label for="late">
-      Количество часов опоздания
+    </div>
+    <div class="late">
+      <p class="name">Количество часов опоздания</p>
       <input type="number" min="0" class="input-late" name="late" id="late" placeholder="0" aria-placeholder="Количество часов опаздания">
-    </label>
-    <p>
-      Время прибытия из-за опоздания
+    </div>
+    <div class="itog-time-output">
+      <p class="name">Время прибытия из-за опоздания</p>
       <output class="time-output">...</output>
-    </p>
+    </div>
   </form>
 
 
@@ -31,6 +32,7 @@
       <button class="check-btn">Проверить</button>
       <output class="brackets-output">...</output>
     </form>
+    </div>
 
     <img class='logo' src="src/logo.png">
     
