@@ -12,39 +12,52 @@ function calculateTimeDelay(arrival: number, delay: number): number {
     return result
 }
 
-class BracketsString {
-    str: string;
 
-    static brackets = {
-        '(': ')',
-        '[': ']',
-        '{': '}',
+const Brackets = {
+    '(': ')',
+    '[': ']',
+    '{': '}',
+}
+
+class Stack {
+    stack: Array<string>;
+
+    constructor() {
+        this.stack = [];
     }
 
-    constructor(str: string) {
-        this.str = str;
+    peek(value: string) {
+        return this.stack[-1];
     }
 
-    checkBrackets(): boolean {
-        let opens_stack = [];
-        let has_brackets = false;
+    pop() {
+        return this.stack.pop();
+    }
+    
+    push(value: string) {
+        this.stack.push(value);
+    }
+}
 
-        for (const char of this.str) {
-            if (char in BracketsString.brackets) {
-                opens_stack.push(char);
-                has_brackets = true;
-            }
-            else if (Object.values(BracketsString.brackets).includes(char)) {
-                const open = opens_stack.pop();
-                has_brackets = true;
-                if (BracketsString.brackets[open] !== char) {
-                    return false
-                }
+function checkBrackets(str: string): boolean {
+    const opens_stack = new Stack();
+    let has_brackets = false;
+
+    for (const char of str) {
+        if (char in Brackets) {
+            opens_stack.push(char);
+            has_brackets = true;
+        }
+        else if (Brackets[char]) {
+            const open = opens_stack.pop();
+            has_brackets = true;
+            if (Brackets[open] !== char) {
+                return false
             }
         }
-
-        return (has_brackets && opens_stack.length === 0)
     }
+
+    return has_brackets && !opens_stack
 }
 
 
@@ -76,10 +89,10 @@ timeInputs.forEach(_ => {
 
 bracketsButton.addEventListener('click', (event) => {
     event.preventDefault;
-    const str: BracketsString = new BracketsString(brackets.value);
+    const str: string = brackets.value;
 
     console.log(str)
 
-    bracketsOutput.textContent = str.checkBrackets() ? 
+    bracketsOutput.textContent = checkBrackets(str) ? 
     'Скобки в строке валидны' : 'Строка не прошла валидацию';
 });
